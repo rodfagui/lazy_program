@@ -109,6 +109,7 @@ end
 post '/' do
 	u = User.new
 	u.nombre = params[:user]
+	u.nombre = "Anonymus" if u.nombre.nil? or u.nombre == ""
 	u.created_at = Time.now
 	u.save
 
@@ -139,9 +140,8 @@ post '/' do
 			@array_sal << line
 		end
 	end
-	
+
   @title = "Show"
 	erb :show
 end
-
 
