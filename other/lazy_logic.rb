@@ -5,7 +5,10 @@ def open_lazy(filename)
 	    array << line.to_i
 	  end
 	end
+	array
+end
 
+def organize_days(array)
 	t = array.shift
 
 	array3 = []
@@ -75,15 +78,17 @@ def create_lines (array)
 	str
 end
 
-def out_lazy (array)
-	File.open("out.txt", "w+") do |f|
+def out_lazy (array, filename)
+	File.open(filename, "w+") do |f|
 	  array.each {|element| f.puts(element)}
 	end
 end
 
-filename = 'lazy_loading_example_input.txt'
-tw, aw = open_lazy(filename)
+filename = '../lazy_loading_example_input.txt'
+ew = open_lazy(filename)
+out_lazy(ew, "int.txt")
+nw, aw = organize_days(ew)
 sw = create_lines(aw)
-out_lazy(sw)
+out_lazy(sw, "out.txt")
 
 

@@ -1,5 +1,19 @@
-<% @array.each do |c| %>
-  <p>
-    <%=c%>
-  </p>    
-<% end %>
+<div class="row">
+  <div class="col-md-6">
+  	<h2>Entradas</h2>
+    <% @array_ent.each do |e| %>
+	  <p>
+	    <%=e%>
+	  </p>    
+	<% end %>
+  </div>
+
+  <div class="col-md-6">
+  	<h2>Salida</h2>
+	<% @array_sal.each do |c| %>
+	  <p>
+	    <%=c%>
+	  </p>    
+	<% end %>  	
+  </div>	
+</div>
